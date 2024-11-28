@@ -1,5 +1,5 @@
 #Advanced Image Editor - Cartoonizer and Favicon Generator
-##Project Overview
+Project Overview
 The Advanced Image Editor is a web-based application built using Flask (Python framework) that allows users to upload images, apply a cartoon effect, and generate a favicon.ico for their website. This project provides two primary functionalities:
 
 ##Cartoon Effect: Users can upload an image and customize it with a cartoon effect by adjusting parameters such as line size, blur value, and the number of colors. The image is then processed and displayed as a cartoon.
