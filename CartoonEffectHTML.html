@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Image Editor</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='cartoonstyles.css') }}">
+
+
+</head>
+
+<body>
+    <header>
+        <h1>Advanced Image Editor</h1>
+        <p>Customize your images with precision and style!</p>
+    </header>
+
+    <main>
+        <!-- Upload Section -->
+        <section class="upload-section">
+            <h2>Upload Your Photo</h2>
+            <form action="{{ url_for('process_image') }}" method="POST" enctype="multipart/form-data">
+                <input type="file" name="file" accept="image/*">
+                <button type="submit">Upload Image</button>
+            </form>
+            
+            <div id="uploadPreview" class="preview-box">
+                <img id="preview-img" src="" alt="Image Preview" style="display: none; max-width: 100%; max-height: 300px;">
+                <p id="preview-placeholder">Preview will appear here...</p>
+            </div>
+        </section>
+
+        <!-- Settings Section -->
+        <section class="settings-section">
+            <h2>Adjust Parameters</h2>
+            <div class="control-group">
+                <label for="lineSize">Line Size:</label>
+                <input type="range" id="lineSize" min="1" max="10" value="5" aria-label="Adjust line size">
+            </div>
+
+            <div class="control-group">
+                <label for="blurValue">Blur Value:</label>
+                <input type="range" id="blurValue" min="0" max="50" value="10" aria-label="Adjust blur value">
+            </div>
+
+            <div class="control-group">
+                <label for="numColors">Number of Colors:</label>
+                <input type="number" id="numColors" min="1" max="256" value="16" aria-label="Set number of colors">
+            </div>
+        </section>
+
+        <!-- Preview Section -->
+        <section class="preview-section">
+            <h2>Image Preview</h2>
+            <div id="preview" class="preview-box">
+                <p>Your image preview will be displayed here.</p>
+            </div>
+            <img id="cartoon-output" style="display: none; margin-top: 20px;" alt="Cartoonized Image">
+            <button id="processImage" class="btn-primary">Process Image</button>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Designed with 💜 for creative minds</p>
+    </footer>
+    <script src="{{ url_for('static', filename='cartoonscript.js') }}"></script>
+</body>
+</html>
